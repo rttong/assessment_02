@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>Welcome to Note Master!</h1>
+  
+  <form action="/notes/create" method="post">
+    <p><label>Title: <input type="text" name="note[title]"></label></p>
+    
+    <div id="error">
+      <% if @note && @note.errors %>
+        <% @note.errors.full_messages do |message| %>
+          <span style="color:red;"><%= message %></span>
+        <% end %>
+      <% end %>
+    </div>
+
+    <p><label>Content: <input type="text" name="note[content]"></label></p>
+    
+    <div id="error">
+      <% if @note && @note.errors %>
+        <% @note.errors.full_messages do |message| %>
+          <span style="color:red;"><%= message %></span>
+        <% end %>
+      <% end %>
+    </div>
+
+    <input type="submit" value="Create Note">
+  </form>
+</div>

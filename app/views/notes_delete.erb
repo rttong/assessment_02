@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Welcome to Note Master!</h1>
+  <h2>Delete a Note</h2>
+  
+  <form action="/notes/<%= @note.id %>/delete" method="post">
+  	<input type="hidden" name="_method" value="delete">
+    <p><label>Title: <input type="text" name="note[title]" value="<%= @note.title %>"></label></p>
+    <p><label>Content: <input type="text" name="note[content]" value="<%= @note.content %>"></label></p>
+    <p style="color:red;">Really delete? (Note will not delete unless box below is checked...)</p>
+    <p><label>Confirm:</label> <input type="checkbox" name="delete"></p>
+    <input type="submit" value="Delete Note">
+  </form>
+
+</div>

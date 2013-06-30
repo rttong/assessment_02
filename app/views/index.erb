@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Welcome to Note Master!</h1>
+  <a href="/notes/create">Create new note</a>
+  
+  <h2>All Notes</h2>
+    <% @notes.each do |note| %>
+      <p>
+      <strong><%= note.title %></strong><br />
+      <%= note.content %><br />
+      <a href="/notes/<%= note.id %>/edit">edit</a> &#124; <a href="/notes/<%= note.id %>/delete">delete</a>
+      </p>
+    <% end %>
+
+</div>
